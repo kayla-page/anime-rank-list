@@ -39,3 +39,15 @@ function displaySubmission(name, top5) {
   submissionDiv.innerHTML = `<h3>${name}'s Top 5 Anime:</h3><p>${top5}</p>`;
   submissionContainer.appendChild(submissionDiv);
 }
+// Function to save submission to local storage
+function saveSubmission(name, top5) {
+  let submissions = JSON.parse(localStorage.getItem("submissions")) || [];
+  submissions.push({ name: name, top5: top5 });
+  localStorage.setItem("submissions", JSON.stringify(submissions));
+}
+
+// Function to retrieve submissions from local storage
+function getSubmissions() {
+  return JSON.parse(localStorage.getItem("submissions")) || [];
+}
+
