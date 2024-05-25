@@ -17,16 +17,29 @@
       <form id="animeForm">
         <label for="name">Name:</label>
         <input type="text" id="name" required><br><br>  
-        <div id="animeList">
-          <label for="anime">Anime:</label>
-          <input type="text" id="anime" required>
-          <label for="animeImage">Image URL:</label>
-          <input type="url" id="animeImage" required>
-          <button type="button" onclick="addAnime()">Add Anime</button>
-        </div>
-        <label for="top5">Top 5 Anime:</label>
-        <textarea id="top5" rows="5" required></textarea><br><br>
-        <button type="submit">Submit</button>
+       <div id="animeList">
+  <div class="anime-item">
+    <img src="anime_image_url" alt="Anime Image" class="anime-image">
+    <span class="anime-name">Anime Name</span>
+    <button class="delete-btn" onclick="deleteAnime(this)">Delete</button>
+  </div>
+</div>
+
+<label for="anime">Anime:</label>
+<input type="text" id="anime" required>
+<label for="animeImage">Image URL:</label>
+<input type="url" id="animeImage" required>
+<button type="button" onclick="addAnime()">Add Anime</button>
+
+<label for="watchedBefore">Anime I've Watched Before:</label>
+<textarea id="watchedBefore" rows="3" required></textarea>
+
+<label for="top5">Top 5 Anime:</label>
+<textarea id="top5" rows="5" required></textarea>
+
+<button type="button" onclick="submitForm()">Submit</button>
+<button type="button" onclick="goToHomePage()">Home</button>
+<button type="button" onclick="editSubmission()">Edit</button>
       </form>
     </section>
     <section id="about">
