@@ -28,14 +28,22 @@ function deleteAnime(btn) {
   animeItem.remove();
 }
 
+// Function to submit the form
+function submitForm() {
+  const watchedBefore = document.getElementById("watchedBefore").value;
+  const top5 = document.getElementById("top5").value;
+
+  // Implement submission functionality based on your requirements
+}
+
+// Function to navigate to the home page
+function goToHomePage() {
+  // Implement navigation to the home page
+}
+
 // Function to edit submission
 function editSubmission() {
   // Implement edit functionality based on your requirements
-}
-
-// Function to go back to home page
-function goToHomePage() {
-  window.location.href = "index.html";
 }
 
 document.getElementById("animeForm").addEventListener("submit", function(event) {
