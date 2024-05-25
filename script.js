@@ -2,6 +2,11 @@ function redirectToRegistration() {
   window.location.href = "registration.html";
 }
 
+// Function to navigate to the home page
+function goToHomePage() {
+  window.location.href = "index.html"; // Replace "index.html" with the correct filename of your home page
+}
+
 // Function to add anime to the list
 function addAnime() {
   const animeName = document.getElementById("anime").value;
@@ -34,11 +39,6 @@ function submitForm() {
   const top5 = document.getElementById("top5").value;
 
   // Implement submission functionality based on your requirements
-}
-
-// Function to navigate to the home page
-function goToHomePage() {
-  window.location.replace("index.html"); // Assuming the home page is named "index.html"
 }
 
 // Function to edit submission
