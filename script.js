@@ -7,6 +7,11 @@ function goToHomePage() {
   window.location.href = "index.html"; // Replace "index.html" with the correct filename of your home page
 }
 
+function deleteList() {
+  // Perform delete operation only if user is authenticated and authorized
+  // Implement logic to delete the list
+}
+
 // Function to add anime to the list
 function addAnime() {
   const animeName = document.getElementById("anime").value;
