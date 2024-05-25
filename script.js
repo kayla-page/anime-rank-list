@@ -32,13 +32,6 @@ document.getElementById("animeForm").addEventListener("submit", function(event) 
   displaySubmission(name, top5);
 });
 
-function displaySubmission(name, top5) {
-  const submissionContainer = document.getElementById("submissionContainer");
-  const submissionDiv = document.createElement("div");
-  submissionDiv.classList.add("submission");
-  submissionDiv.innerHTML = `<h3>${name}'s Top 5 Anime:</h3><p>${top5}</p>`;
-  submissionContainer.appendChild(submissionDiv);
-}
 // Function to save submission to local storage
 function saveSubmission(name, top5) {
   let submissions = JSON.parse(localStorage.getItem("submissions")) || [];
@@ -50,4 +43,20 @@ function saveSubmission(name, top5) {
 function getSubmissions() {
   return JSON.parse(localStorage.getItem("submissions")) || [];
 }
+function displaySubmissions() {
+  const submissions = getSubmissions();
+  const submissionContainer = document.getElementById("submissionContainer");
+  submissionContainer.innerHTML = ""; // Clear previous submissions
+  
+  submissions.forEach(submission => {
+    const submissionDiv = document.createElement("div");
+    submissionDiv.classList.add("submission");
+    submissionDiv.innerHTML = `<h3>${submission.name}'s Top 5 Anime:</h3><p>${submission.top5}</p>`;
+    submissionContainer.appendChild(submissionDiv);
+  });
+}
+window.addEventListener("load", function() {
+  displaySubmissions();
+});
+
 
