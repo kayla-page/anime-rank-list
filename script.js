@@ -1,5 +1,5 @@
-function register() {
-  document.getElementById("registerForm").style.display = "block";
+function redirectToRegistration() {
+  window.location.href = "registration.html";
 }
 
 function addAnime() {
