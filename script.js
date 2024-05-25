@@ -38,7 +38,7 @@ function submitForm() {
 
 // Function to navigate to the home page
 function goToHomePage() {
-  window.location.href = "index.html"; // Assuming the home page is named "index.html"
+  window.location.href = index.html; // Assuming the home page is named "index.html"
 }
 
 // Function to edit submission
