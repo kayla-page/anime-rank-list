@@ -45,16 +45,15 @@ function getSubmissions() {
   return JSON.parse(localStorage.getItem("submissions")) || [];
 }
 
-// Function to display submissions on the main page
 function displaySubmissions() {
   const submissions = getSubmissions();
   const submissionContainer = document.getElementById("submissionContainer");
   submissionContainer.innerHTML = ""; // Clear previous submissions
   
-  submissions.forEach(submission => {
+  submissions.forEach((submission, index) => {
     const submissionDiv = document.createElement("div");
     submissionDiv.classList.add("submission");
-    submissionDiv.innerHTML = `<h3>${submission.name}'s Top 5 Anime:</h3><p>${submission.top5}</p>`;
+    submissionDiv.innerHTML = `<h3><a href="submissions/user${index}.html">${submission.name}'s Top 5 Anime</a></h3><p>${submission.top5}</p>`;
     submissionContainer.appendChild(submissionDiv);
   });
 }
