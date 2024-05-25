@@ -2,14 +2,40 @@ function redirectToRegistration() {
   window.location.href = "registration.html";
 }
 
+// Function to add anime to the list
 function addAnime() {
   const animeName = document.getElementById("anime").value;
   const animeImage = document.getElementById("animeImage").value;
-  const animeList = document.getElementById("top5");
+  const animeList = document.getElementById("animeList");
 
-  const existingAnime = animeList.value.trim().split("\n");
-  existingAnime.push(`${animeName}: ${animeImage}`);
-  animeList.value = existingAnime.join("\n");
+  const animeItem = document.createElement("div");
+  animeItem.classList.add("anime-item");
+  animeItem.innerHTML = `
+    <img src="${animeImage}" alt="${animeName}" class="anime-image">
+    <span class="anime-name">${animeName}</span>
+    <button class="delete-btn" onclick="deleteAnime(this)">Delete</button>
+  `;
+  animeList.appendChild(animeItem);
+
+  // Clear input fields
+  document.getElementById("anime").value = "";
+  document.getElementById("animeImage").value = "";
+}
+
+// Function to delete anime from the list
+function deleteAnime(btn) {
+  const animeItem = btn.parentElement;
+  animeItem.remove();
+}
+
+// Function to edit submission
+function editSubmission() {
+  // Implement edit functionality based on your requirements
+}
+
+// Function to go back to home page
+function goToHomePage() {
+  window.location.href = "index.html";
 }
 
 document.getElementById("animeForm").addEventListener("submit", function(event) {
