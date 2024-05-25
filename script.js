@@ -37,12 +37,15 @@ function saveSubmission(name, top5) {
   let submissions = JSON.parse(localStorage.getItem("submissions")) || [];
   submissions.push({ name: name, top5: top5 });
   localStorage.setItem("submissions", JSON.stringify(submissions));
+  displaySubmissions(); // Call display function after saving submission
 }
 
 // Function to retrieve submissions from local storage
 function getSubmissions() {
   return JSON.parse(localStorage.getItem("submissions")) || [];
 }
+
+// Function to display submissions on the main page
 function displaySubmissions() {
   const submissions = getSubmissions();
   const submissionContainer = document.getElementById("submissionContainer");
@@ -55,8 +58,24 @@ function displaySubmissions() {
     submissionContainer.appendChild(submissionDiv);
   });
 }
+
 window.addEventListener("load", function() {
   displaySubmissions();
 });
 
+document.getElementById("animeForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const top5 = document.getElementById("top5").value;
+
+  // Save submission to local storage
+  saveSubmission(name, top5);
+
+  // Clear the form after submission
+  document.getElementById("name").value = "";
+  document.getElementById("top5").value = "";
+  document.getElementById("anime").value = "";
+  document.getElementById("animeImage").value = "";
+});
 
