@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anime Rank List</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Anime Rank List</h1>
+    <button onclick="register()">Click me to register</button>
+  </header>
+  <main>
+    <section id="registerForm" style="display: none;">
+      <h2>Register Your Anime Rankings</h2>
+      <form id="animeForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required><br><br>  
+        <div id="animeList">
+          <label for="anime">Anime:</label>
+          <input type="text" id="anime" required>
+          <label for="animeImage">Image URL:</label>
+          <input type="url" id="animeImage" required>
+          <button type="button" onclick="addAnime()">Add Anime</button>
+        </div>
+        <label for="top5">Top 5 Anime:</label>
+        <textarea id="top5" rows="5" required></textarea><br><br>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+    <section id="about">
+      <h2>About Anime Rank List</h2>
+      <p>This website allows you to register your favorite anime and rank them. You can also see other users' top 5 anime.</p>
+    </section>
+    <section id="otherSubmissions">
+      <h2>Other Submissions</h2>
+      <div id="submissionContainer"></div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
